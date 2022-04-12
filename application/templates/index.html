@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Med</title>
+ </head>
+<body>
+        <h2>Welcome to Med Prediction</h2>
+        <h3>Enter info</h3>
+        <form action = "{{ url_for('medclassify') }}" method="POST">
+            <table border="1" style="border-color:gray; border-collapse:collapse;" cellpadding="5" cellspacing="5">
+                <tr>     
+                    <td><h4>Age</h4> 
+                        <input type="number" name="age" min="21" max="70" > </td>             
+                    <td><h4>Gender</h4>
+                        <select name = "gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </td>
+                    <td><h4>Hypertension</h4>
+                        <select name = "hypertension">
+                            <option value="0">0</option>
+                            <option value="1">1</option>             
+                        </select>
+                    </td>
+                    <td><h4>Heartdisease</h4>
+                        <select name = "heartdisease"> 
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><h4>EverMarried</h4>
+                        <select name = "evermarried">
+                            <option value="Yes">Yes</option> 
+                            <option value="No">No</option>
+                        </select>
+                    </td>              
+                    <td><h4>WorkType</h4>
+                        <select name = "worktype">
+                            <option value="Private">Private</option> 
+                            <option value="Self-employed">Self-employed</option>
+                            <option value="children">children</option>
+                            <option value="Govt_job">Govt_job</option>
+                            <option value="Never_worked">Never_worked</option>
+                        </select>
+                    </td>
+                    <td><h4>ResidenceType</h4>
+                        <select name = "residencetype">
+                            <option value="Urban">Urban</option>
+                            <option value="Rural">Rural</option>
+                        </select>
+                    </td>
+                    <td><h4>SmokingStatus</h4>
+                        <select name = "smokingstatus">
+                            <option value="never smoked">never smoked</option> 
+                            <option value="Unknown">Unknown</option>
+                            <option value="formerly smoked">formerly smoked</option>
+                            <option value="smokes">smokes</option>
+                        </select>
+                    </td>            
+                </tr>
+            </table>
+            <!-- <input type="hidden" id="forminput" name="forminput"  >    -->        
+            <p><input type="submit" value="Will the customer subscribe to term-loan?"></p>
+             {% if (results) %} 
+             <h3> Customer prediction: {{ results }}  </h3>
+             <p> for following features: </p>
+             <p> Age: {{age}} Gender: {{gender}} Hypertension: {{hypertension}} Heartdisease: {{heartdisease}} </p>
+             <p> EverMarried: {{evermarried}} WorkType: {{worktype}} ResidenceType: {{residencetype}} SmokingStatus: {{smokingstatus}}</p>
+             {% endif %} 
+        </form>
+</body>
+</html>
