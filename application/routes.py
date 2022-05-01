@@ -30,7 +30,7 @@ def medclassify():
     input_data = json.dumps({"gender": gender, "age": age, "hypertension": hypertension, "heartdisease": heartdisease, "evermarried": evermarried, "worktype": worktype,"residencetype":residencetype, "smokingstatus": smokingstatus})
 
     #url for bank marketing model
-    url = "http://localhost:8080/api"
+    url = "http://localhost:5000/api"
     # url = "https://bank-model-app.herokuapp.com/api"
   
     #post data to url
